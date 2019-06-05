@@ -8,7 +8,7 @@ install_go(){
 	wget https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz
 
 	tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
-	export PATH=$PATH:/usr/local
+	export PATH=$PATH:/usr/local/go/bin
 	go version
 	rm go${GO_VERSION}.linux-amd64.tar.gz
 	echo "+ golang installed"
