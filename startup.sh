@@ -63,6 +63,9 @@ provisioning_prep(){
 	#create consul encrypt key for new cluster
 	docker run consul keygen > /root/terraform/consul_key
 
+	#git dir for tf plugins and libraries 
+	mkdir /root/git
+	
 	#dir for symlinks to plugins(Vultr TF provider primarily)
 	mkdir /root/.terraform.d/plugins/
 	echo "+ tf prep finished, git clone plans to /root/terraform/"
