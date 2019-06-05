@@ -71,6 +71,8 @@ provisioning_prep(){
 main(){
 	install_deps
 	provisioning_prep
+	#save boot script log
+	cp /tmp/firstboot.log /root/boot.log
 }
 
 main
