@@ -47,7 +47,7 @@ install_deps(){
 	apt -y install unzip git
 
 
-	#install go to build Vultr TF Provider
+	#install go(needed to build Vultr TF Provider, will hopefully become official/bundled w/ the TF binary eventually
 	install_go
 	install_consul
 	install_terraform
@@ -68,6 +68,10 @@ provisioning_prep(){
 	
 	#dir for symlinks to plugins(Vultr TF provider primarily)
 	mkdir /root/.terraform.d/plugins/
+	
+	#Create provisioner SSH key pair
+	ssh-keygen -f /root/.ssh/id_rsa -t rsa -b 4096 -N ''
+	
 	echo "+ tf prep finished, git clone plans to /root/terraform/"
 }
 
